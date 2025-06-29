@@ -3,19 +3,32 @@ import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import 'react-toastify/dist/ReactToastify.css';
+import { validateUsername, validateEmail } from '../validation/Validation';
 
 const Registration = () => {
   const navigate = useNavigate();
   const [loginForm, setLoginForm] = useState({ email: '', password: '' });
   const [signupForm, setSignupForm] = useState({ username: '', email: '' });
+  const [signupErrors, setSignupErrors] = useState({ username: '', email: '' });
   const [showLoginPassword, setShowLoginPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleLoginChange = (e) =>
     setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
 
-  const handleSignupChange = (e) =>
-    setSignupForm({ ...signupForm, [e.target.name]: e.target.value });
+  const handleSignupChange = (e) => {
+    const { name, value } = e.target;
+    setSignupForm({ ...signupForm, [name]: value });
+
+    let error = '';
+    if (name === 'username') {
+      error = validateUsername(value);
+    } else if (name === 'email') {
+      error = validateEmail(value);
+    }
+
+    setSignupErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
+  };
 
   const handleLogin = () => {
     if (!loginForm.email || !loginForm.password) {
@@ -28,6 +41,9 @@ const Registration = () => {
   const handleSendOtp = () => {
     if (!signupForm.username || !signupForm.email) {
       return toast.error('All fields are required');
+    }
+    if (signupErrors.username || signupErrors.email) {
+      return toast.error('Fix form errors before proceeding');
     }
     toast.success('OTP Sent');
   };
@@ -90,21 +106,29 @@ const Registration = () => {
             </p>
             <input
               type="text"
-              className="form-control mb-3"
+              className="form-control mb-1"
               placeholder="Username"
               name="username"
               value={signupForm.username}
               onChange={handleSignupChange}
             />
+            {signupErrors.username && (
+              <div className="alert alert-danger py-1 px-2 mt-1">{signupErrors.username}</div>
+            )}
+
             <input
               type="email"
-              className="form-control mb-3"
+              className="form-control mb-1 mt-3"
               placeholder="Email"
               name="email"
               value={signupForm.email}
               onChange={handleSignupChange}
             />
-            <button className="btn-teal" onClick={handleSendOtp}>Send OTP</button>
+            {signupErrors.email && (
+              <div className="alert alert-danger py-1 px-2 mt-1">{signupErrors.email}</div>
+            )}
+
+            <button className="btn-teal mt-3" onClick={handleSendOtp}>Send OTP</button>
             <p className="text-center mt-3 small">
               Already have an account? <a href="/login" className="text-teal">Sign in now</a>
             </p>

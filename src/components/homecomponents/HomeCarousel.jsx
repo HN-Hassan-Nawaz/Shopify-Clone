@@ -60,12 +60,11 @@ const HeroCarousel = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-6 text-center">
+                                    <div className="col-md-6 text-center image-container">
                                         <img
                                             src={slide.image}
                                             alt={slide.title}
-                                            className="img-fluid"
-                                            style={{ maxHeight: '450px', objectFit: 'cover' }}
+                                            className="carousel-image"
                                         />
                                     </div>
                                 </div>
