@@ -235,7 +235,7 @@ function Navbar() {
                             </div>
                         ))}
                         <div className="mega-banner">
-                            <span className="discount-circle">35%<br />off</span>
+                            <span className="discount-circle">45%<br />off</span>
                             <p className="banner-title">HOT DEALS</p>
                             <p className="banner-highlight">Don't miss<br />Trending</p>
                             <p className="banner-save">Save up to 50%</p>
