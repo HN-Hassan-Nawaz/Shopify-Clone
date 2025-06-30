@@ -1592,6 +1592,10 @@ body {
   background-color: #d6f5f0;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .btn-outline-teal {
   background: white;
   color: #14b8a6;

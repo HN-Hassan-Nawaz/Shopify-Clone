@@ -9,12 +9,12 @@ function Company() {
 
 
                 {/* Right Column: Text */}
-                <div className="col-md-6">
+                <div className="col-md-6 text-justify" style={{ height: "100%" }}>
                     <p className="text-uppercase text-success fw-bold small">Our Company</p>
-                    <h2 className="fw-semibold mb-4" style={{ fontSize: "2.3rem" }}>
-                        We are Building the <br />
-                        Ultimate E-Commerce <br />
-                        Marketplace for All Your <br />
+                    <h2 className="mb-4 fs-1" style={{ fontSize: "2rem" }}>
+                        We are Building the
+                        Ultimate E-Commerce
+                        Marketplace for All Your
                         Shopping Needs
                     </h2>
                     <p className="text-muted">

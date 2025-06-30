@@ -303,7 +303,8 @@ function Navbar() {
                     </div>
                 )}
 
-                <div className="menu-item">Home</div>
+                <div onClick={() => handleNavigation("/")} className="menu-item">Home</div>
+                <div onClick={() => handleNavigation("/about")} className="menu-item">About</div>
                 <div className="menu-item">Shop</div>
 
                 <div className="menu-item" onClick={() => setOpenMega(!openMega)}>
