@@ -48,10 +48,10 @@ const HeroCarousel = () => {
                         <div className="container-fluid py-5 home-carousel">
                             <div className="container">
                                 <div className="row align-items-center">
-                                    <div className="col-md-8 py-5">
+                                    <div className="col-md-6 py-5">
                                         <p className="fs-3 text-muted mb-2">{slide.subtitle}</p>
                                         <h1 className="fs-1 mb-1 fw-bold">{slide.title}</h1>
-                                        <h2 className="fw-bold mb-4 desc-text col-md-10" style={{ fontSize: '3rem' }}>
+                                        <h2 className="fw-bold mb-4 desc-text col-md-10" style={{ fontSize: '2.2rem' }}>
                                             {slide.description}
                                         </h2>
                                         <div className="brush-container mt-4">
@@ -60,7 +60,7 @@ const HeroCarousel = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-4 text-center image-container">
+                                    <div className="col-md-6 text-center image-container">
                                         <img
                                             src={slide.image}
                                             alt={slide.title}
