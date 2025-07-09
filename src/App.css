@@ -53,9 +53,7 @@ body {
 
 
 
-
-@media (max-width: 375px) {
-
+@media (min-width: 320px) and (max-width: 375px) {
   /* Hide top contact bar */
   .top-bar {
     display: none;
@@ -237,6 +235,11 @@ body {
     font-size: 18px;
     color: #6b7280;
     height: 30vh;
+  }
+
+  .home-carousel{
+    width: 100%;
+    height: 1100px;
   }
 }
 
@@ -454,6 +457,11 @@ body {
   /* ===== Hide top bar and adjust layout ===== */
   .top-bar {
     display: none;
+  }
+
+  .home-carousel{
+    width: 100%;
+    height: 600px;
   }
 
   .logo-search {
@@ -1094,7 +1102,6 @@ body {
 
 
 /* home page content section css */
-
 .home-carousel {
   width: 100%;
 }
@@ -1140,6 +1147,7 @@ body {
   font-weight: 600;
   color: #168585;
   font-size: 1.2rem;
+  /* background: red; */
 }
 
 /* Feature cards hover effect */
